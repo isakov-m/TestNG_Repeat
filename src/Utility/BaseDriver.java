@@ -44,7 +44,7 @@ public class BaseDriver {
         MyFunc.Bekle(2);
 
         WebElement email = driver.findElement(By.id("input-email"));
-        email.sendKeys("kg@mail.ru");
+        email.sendKeys("kgs@gmail.com");
         WebElement password = driver.findElement(By.id("input-password"));
         password.sendKeys("Barca");
         WebElement loginBtn = driver.findElement(By.cssSelector("[type='submit']"));
