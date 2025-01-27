@@ -4,7 +4,7 @@ import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
-public class _04_Groups {
+public class _05_GroupsBeforeAfter {
 
     @Test(groups = {"Smoke Test"})
     public void test1(){ System.out.println("test1"); }
@@ -26,5 +26,10 @@ public class _04_Groups {
 
     @Test
     public void test7(){ System.out.println("test7"); }
-    
+
+    @BeforeGroups(groups = {"Smoke Test"})
+    public void bGroups() { System.out.println("Before Groups");}
+
+    @AfterGroups(groups = {"Smoke Test"})
+    public void aGroups() { System.out.println("After Groups");}
 }

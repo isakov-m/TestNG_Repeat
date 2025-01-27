@@ -14,7 +14,7 @@
 
         <!-- calisacak classlarin yazildigi bolum -->
         <classes>
-            <class name="Gun03._04_Groups"> </class>
+            <class name="Gun03._05_GroupsBeforeAfter"> </class>
         </classes>
 
     </test>
