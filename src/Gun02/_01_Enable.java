@@ -43,7 +43,6 @@ public class _01_Enable {
 
     @AfterClass
     public void bitisIslemleri(){
-        System.out.println("bitisIslemleri calisti");
         System.out.println("bitisIslemleri çalıştı");
         MyFunc.Bekle(5);
         driver.quit();
