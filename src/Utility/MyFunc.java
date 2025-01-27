@@ -18,4 +18,12 @@ public class MyFunc {
 
     }
 
+
+    // Çoğu yerde aynı mesaj doğrulaması kullanıldığı için bu bölümü
+    // ortak fonksiyonların yer aldığı MyFunc a taşındı.
+    public static void successMessageValidation(){
+        WebElement msgLabel=BaseDriver.driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+        Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
+    }
+
 }
