@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 public class BaseDriverParameter {
 
-    public static WebDriver driver; // SingletonDriver method
+    public  WebDriver driver;
     public static WebDriverWait wait;
 
     @BeforeClass
