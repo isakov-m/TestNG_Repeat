@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="mySuit">
+
+    <test name="MyTest1">
+        <parameter name="mesaj" value="Merhaba testing dunyasi "></parameter>
+        <classes>
+            <class name="Gun03._06_ContactUsParameter"> </class>
+        </classes>
+    </test>
+
+    <test name="MyTest2">
+        <parameter name="mesaj" value="TestNG en onemli ozelligi XML file "></parameter>
+        <classes>
+            <class name="Gun03._06_ContactUsParameter"> </class>
+        </classes>
+    </test>
+
+</suite>
+
+
