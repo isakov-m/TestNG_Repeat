@@ -11,8 +11,8 @@ public class _02_DataProvider_CokBoyutlu {
         System.out.println(username+" "+password);
     }
 
-    @DataProvider
-    public Object [][] UserData(){
+    @DataProvider   // bu metoda dataprovider gorevi verildi
+    public Object [][] UserData(){  // DataProvider olarak kullanilacak metodun tipi Object olmak zorunda
         Object[][] data = {
                 {"ihsan","122334"},
                 {"sokol","rustemi5"},
