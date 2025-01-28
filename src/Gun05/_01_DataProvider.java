@@ -16,4 +16,21 @@ public class _01_DataProvider {
 
         return aranacaklar;
     }
+
+    /***********************************************************/
+
+    @Test(dataProvider = "datalar")
+    public void test2(int veri){
+        System.out.println("veri = " + veri);
+    }
+
+    @DataProvider(name = "datalar")
+    Object[] getData(){
+        Object[] data = {1,2,3,4,5};
+
+        return data;
+    }
+
+
+
 }
