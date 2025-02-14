@@ -18,14 +18,16 @@ public class _01_GenelSoru extends BaseDriver {
     @Test
     void test1(){
 
-        WebElement brands = driver.findElement(By.linkText("Brands"));
-        brands.click();
+        WebElement brandsLink= driver.findElement(By.linkText("Brands"));
+        brandsLink.click();
 
-        List<WebElement> harfler = driver.findElements(By.cssSelector("[id='content']>h2"));    // harfler
-        List<WebElement> markalarSatirlari = driver.findElements(By.cssSelector("[id='content']>div"));    // markaSatirlari
+        List<WebElement> harfler=driver.findElements(By.cssSelector("[id='content'] > h2")); // harfler
+        List<WebElement> markalarSatirlari=driver.findElements(By.cssSelector("[id='content'] > div")); // markaSatirlarini
+
 
         for (int i = 0; i < harfler.size(); i++) {
-            List<WebElement> markalar = markalarSatirlari.get(i).findElements(By.tagName("div"));
+
+            List<WebElement>  markalar=markalarSatirlari.get(i).findElements(By.tagName("div"));  // markalar bunun içinde
             //By.cssSelector("[class='col-sm-3']")
             // element içinde element aranırken xpath kullanılmaz, çünkü o tüm sayafya bakar.
 
@@ -33,6 +35,7 @@ public class _01_GenelSoru extends BaseDriver {
                 System.out.println(harfler.get(i).getText()+" "+marka.getText().charAt(0)+" "+marka.getText() );
                 Assert.assertEquals(harfler.get(i).getText().charAt(0), marka.getText().charAt(0));
             }
+
         }
 
         // TODO: isteyenler aynı soruyu  https://www.ebay.com/n/all-brands bu siteden testedebilir.
