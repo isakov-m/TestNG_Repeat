@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -63,14 +64,18 @@ public class BaseDriver {
 
     @BeforeMethod
     public void beforeMethod(){
-        // System.out.println("Test metodu basladi");
-        logger4j.info("Test metodu basladi");
+        //System.out.println("test metodu başladı");
+        logger4j.info("test metodu başladı");
+        logger4j.warn("warning mesaj test başladı");
     }
 
     @AfterMethod
-    public void afterMethod(){
-        // System.out.println("Test metodu bitti");
-        logger4j.info("Test metodu bitti");
+    public void afterMethod(ITestResult sonuc){ // tesin sonuç ve isim bilgisini olduğu değişkeni vereyim mi
+        //System.out.println("test metodu bitti");
+        logger4j.info(sonuc.getName() +" test metodu bitti " + (sonuc.getStatus()==1 ? " passed " : "fail") );
+        logger4j.warn("warning mesaj test bitti");
 
+        // excel yazabileceksin
+        // dosyaya da yazabileceksin
     }
 }
