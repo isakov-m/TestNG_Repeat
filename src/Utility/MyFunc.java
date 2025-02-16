@@ -26,4 +26,21 @@ public class MyFunc {
         Assert.assertTrue(msgLabel.getText().toLowerCase().contains("success"));
     }
 
+    public static int randomGenerator(int sinir){
+        return (int)(Math.random()*sinir);
+    }
+
+    public static boolean listContainsString(List<WebElement> list, String aranacakKelime){
+        boolean bulundu=false;
+        for(WebElement e: list){
+            if (e.getText().toLowerCase().equals(aranacakKelime.toLowerCase()))
+            {
+                bulundu=true;
+                break;
+            }
+        }
+
+        return bulundu;
+    }
+
 }
