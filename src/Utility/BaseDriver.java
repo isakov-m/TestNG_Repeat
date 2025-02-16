@@ -1,5 +1,6 @@
 package Utility;
 
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,13 +9,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BaseDriver {
+
+    public static final org.apache.logging.log4j.Logger  logger4j = LogManager.getLogger();
+
 
     public static WebDriver driver; // SingletonDriver method
     public static WebDriverWait wait;
@@ -52,6 +58,19 @@ public class BaseDriver {
 
         MyFunc.Bekle(10);
         //Assert.assertTrue(driver.getTitle().equals("My Account"));
+
+    }
+
+    @BeforeMethod
+    public void beforeMethod(){
+        // System.out.println("Test metodu basladi");
+        logger4j.info("Test metodu basladi");
+    }
+
+    @AfterMethod
+    public void afterMethod(){
+        // System.out.println("Test metodu bitti");
+        logger4j.info("Test metodu bitti");
 
     }
 }
